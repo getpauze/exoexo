@@ -34,8 +34,12 @@ if st.button("Submit Answer"):
 
 # Display the current row data
 st.write("Current Exoplanet Data:")
+
 for col in data.columns:
-    st.write(f"{col}: {st.session_state[col]}")
+    if col == 'image':
+        st.image(st.session_state[col])
+    else:        
+        st.write(f"{col}: {st.session_state[col]}")
 
 
 with col2:
