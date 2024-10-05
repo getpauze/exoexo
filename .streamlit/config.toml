@@ -1,6 +1,8 @@
 [theme]
+backgroundColor = "#000000"
 base="dark"
 font = "monospace"
 
 [server]
 runOnSave = true
+fileWatcherType = "poll"
