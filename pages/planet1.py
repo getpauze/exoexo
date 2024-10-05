@@ -52,13 +52,3 @@ with col2:
     if st.button("Habitable"):
         st.session_state.choice_habitable = True
         check()
-
-# success
-if st.session_state.show_habitable_section:
-    st.write(st.session_state.habitable_explanation)
-
-# fail
-if st.session_state.show_not_habitable_section:
-    st.write(st.session_state.not_habitable_explanation)
-    if st.button("Next Planet"):
-        st.switch_page("pages/planet2.py")

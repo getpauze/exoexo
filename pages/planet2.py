@@ -27,7 +27,7 @@ def check():
         st.write("Oh No! You chose wrong!")
         st.write("Something about the planet that makes it not habitable.")
         if st.button("Next Planet"):
-            st.switch_page("pages/planet2.py")
+            st.switch_page("pages/planet1.py")
     elif not st.session_state.choice_habitable and st.session_state.answer_habitable: 
         st.write("Oh No! You chose wrong!")
         st.write("Something about the planet that makes it habitable.")
@@ -35,7 +35,7 @@ def check():
         st.write("Correct! You chose right!")
         st.write("Something about the planet that makes it not habitable.")
         if st.button("Next Planet"):
-            st.switch_page("pages/planet2.py")
+            st.switch_page("pages/planet1.py")
 
 with col1:
     if st.button("Not Habitable"):
@@ -46,13 +46,3 @@ with col2:
     if st.button("Habitable"):
         st.session_state.choice_habitable = True
         check()
-
-# success
-if st.session_state.show_habitable_section:
-    st.write(st.session_state.habitable_explanation)
-
-# fail
-if st.session_state.show_not_habitable_section:
-    st.write(st.session_state.not_habitable_explanation)
-    if st.button("Next Planet"):
-        st.switch_page("pages/planet1.py")
