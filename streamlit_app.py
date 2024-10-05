@@ -7,7 +7,7 @@ st.write("Your planet has been invaded by aliens! You need to find the exoplanet
 
 col1, col2, col3 = st.columns(3)
 
-data = pd.read_csv('/Users/meghanadravidas/workspace/nasa-space-apps/exoexo/data.csv')
+data = pd.read_csv('data.csv')
 
 # Initialize session state if not already done
 if 'index' not in st.session_state:
@@ -34,8 +34,12 @@ if st.button("Submit Answer"):
 
 # Display the current row data
 st.write("Current Exoplanet Data:")
+
 for col in data.columns:
-    st.write(f"{col}: {st.session_state[col]}")
+    if col == 'image':
+        st.image(st.session_state[col])
+    else:        
+        st.write(f"{col}: {st.session_state[col]}")
 
 
 with col2:
