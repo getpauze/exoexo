@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.session_state.answer_habitable = True
+st.session_state.answer_habitable = False
 st.session_state.habitable_explanation = "This planet is habitable. Congratulations! You found the exoplanet to live on!"
 st.session_state.not_habitable_explanation = "This planet is not habitable. You need to find another one."
 st.session_state.image_url = ""
@@ -11,17 +11,11 @@ st.session_state.show_habitable_section = False
 st.session_state.show_not_habitable_section = False
 
 
-st.title("Exoplanet X")
-st.write("Here are the features of Exoplanet X:")
+st.title("Exoplanet Y")
+st.write("Here are the features of Exoplanet Y:")
 st.write("- It is a rocky planet.")
 st.write("- It has a thin atmosphere.")
 st.write("- It has a large moon.")
-st.write("- It has a ring system.")
-st.write("- It has a magnetic field.")
-st.write("- It has a large canyon.")
-st.write("- It has a large volcano.")
-st.write("- It has a large ocean.")
-st.write("- It has a large mountain.")
 
 col1, col2, col3 = st.columns(3)
 
@@ -61,4 +55,4 @@ if st.session_state.show_habitable_section:
 if st.session_state.show_not_habitable_section:
     st.write(st.session_state.not_habitable_explanation)
     if st.button("Next Planet"):
-        st.switch_page("pages/planet2.py")
+        st.switch_page("pages/planet1.py")
