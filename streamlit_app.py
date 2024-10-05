@@ -7,7 +7,7 @@ st.write("Your planet has been invaded by aliens! You need to find the exoplanet
 
 col1, col2, col3 = st.columns(3)
 
-data = pd.read_csv('/Users/meghanadravidas/workspace/nasa-space-apps/exoexo/data.csv')
+data = pd.read_csv('data.csv')
 
 # Initialize session state if not already done
 if 'index' not in st.session_state:
