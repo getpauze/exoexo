@@ -1,0 +1,4 @@
+id,image_url,prompt,habitable,reason
+1,https://science.nasa.gov/exoplanet-catalog/hd-222237-b/,test_prompt,false,its too big and stuffs
+2,https://science.nasa.gov/exoplanet-catalog/hd-222237-b/,test_prompt,false,its too big and stuffs
+3,https://science.nasa.gov/exoplanet-catalog/hd-222237-b/,test_prompt,false,its too big and stuffs  
