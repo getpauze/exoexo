@@ -1,4 +1,2 @@
-id,image_url,prompt,habitable,reason
-1,https://science.nasa.gov/exoplanet-catalog/hd-222237-b/,test_prompt,false,its too big and stuffs
-2,https://science.nasa.gov/exoplanet-catalog/hd-222237-b/,test_prompt,false,its too big and stuffs
-3,https://science.nasa.gov/exoplanet-catalog/hd-222237-b/,test_prompt,false,its too big and stuffs  
+id,prompt,habitable,reason
+Kepler-452-b,This exoplanet orbits a star similar to our Sun. The temperature conditions are such that it is not too hot or too cold for liquid water to exist on its surface. The planet is 60% larger than Earth and receives slightly more energy from its star than Earth does. It has a rocky surface, and the environment is characterized by high gravity.,True,The exoplanet is in the habitable zone of its star, Kepler-452, allowing for potential liquid water. It is 1.5 times the size of Earth and orbits a Sun-like star that is 1.5 billion years older, suggesting more time for atmospheric and life development, making it a strong candidate for habitability.
