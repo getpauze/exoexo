@@ -1,0 +1,37 @@
+id,image,prompt,habitable,reason
+Kepler-186f,images/Kepler-186f.png,"Two suns set over horizon. Temperature between -100°C and -70°C. Gas giant like Saturn.",False,"Kepler-186f's M-dwarf star may strip its atmosphere with flares and its larger size raises questions about surface conditions."
+
+
+
+id,image,prompt,habitable,reason
+2,planet,"Hotter than most stars, Temperature reaches over 7,800°F, Gas giant planet, Orbits very close to its host star",No,"KELT-9b's extreme temperatures and proximity to its hot A-type star create hostile conditions unsuitable for life."
+
+
+id,image,prompt,habitable,reason
+KELT-9b,"images/KELT-9b","Hotter than most stars. Temperature reaches over 7,800°F. Gas giant planet. Orbits very close to its host star",False,"KELT-9b's extreme temperatures and proximity to its hot A-type star create hostile conditions unsuitable for life."
+
+
+id,image,prompt,habitable,reason
+Kepler-36-b,"images/Kepler-36-b.png","Close to its host star. Temperature around 978 K. Hot, rocky planet",False,"Kepler-36b's proximity to its star and another planet results in high temperatures and unstable atmospheric conditions, making it inhospitable."
+
+id,image,prompt,habitable,reason
+PSR-B1257+12-b,"images/PSR-B1257+12-b.png","Orbits a pulsar emitting high levels of radiation. First exoplanet discovered 2,300 light-years away. Rotates at about 161 times per second.",False,"PSR B1257+12 b orbits a pulsar, exposing it to intense radiation and unstable conditions, making it inhospitable for life."
+
+
+
+id,image,prompt,habitable,reason
+K2-2016-BLG-0005Lb,"images/K2-2016-BLG-0005Lb.png","Gas giant exoplanet similar to Jupiter. Mass and distance from its sun similar to Jupiter. Takes 12.9 years to orbit its star.",False,"K2-2016-BLG-0005Lb is a gas giant with no solid surface and is located far from its star, resulting in cold temperatures and low energy availability, making it inhospitable for life."
+
+
+
+id,image,prompt,habitable,reason
+HD-17156-b,"images/HD-17156-b.png","It is a gas giant. Highly elliptical orbit. significantly closer to its star.",False,"It is hot  with extreme temperatures and a gaseous composition, lacking a solid surface and having a hostile atmosphere, making it unsuitable for habitability."
+
+id,image,prompt,habitable,reason
+GJ-1132-b,"images/GJ-1132-b.png","Rocky world a little bigger than Earth. May have lost one atmosphere but gained another from volcanic activity. Atmosphere composed of hydrogen, methane, and hydrogen cyanide",False,"It has a toxic atmosphere, making it inhospitable for life."
+
+
+id,image,prompt,habitable,reason
+TOI-3757-b,"images/TOI-3757-b.png","Gas giant with the density of a marshmallow, Lowest-density planet detected around a red dwarf, 580 light-years away from Earth",No,"TOI-3757 b is a gas giant with no solid surface and a thick hydrogen-helium atmosphere, exposed to intense radiation from its red dwarf star, making it inhospitable for life."
+
+
