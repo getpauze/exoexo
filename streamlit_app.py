@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(page_title="Exo-Exo", page_icon="🚀", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="ExoStories", page_icon="🚀", initial_sidebar_state="collapsed")
 
 with st.sidebar:
-    st.page_link('streamlit_app.py', label='Exoplanet Exploration', icon='🚀')
+    st.page_link('streamlit_app.py', label='Exoplanet Stories', icon='🚀')
     st.page_link('pages/home.py', label='Exoplanet Home', icon='🏠')
     st.page_link('pages/resources.py', label='Exoplanet Resources', icon='📖')
 
@@ -83,7 +83,7 @@ def check():
     st.write("</div>", unsafe_allow_html=True)
     
 
-st.title("Exo-Exo")
+st.title("ExoStories")
 if not st.session_state.game:
     st.write("Zombies have taken over your planet! You need to find a new planet to live on. Explore the exoplanets below to find a new home.")
     col1, col2, col3 = st.columns(3)
