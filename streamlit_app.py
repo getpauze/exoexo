@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.set_page_config(initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Exo-Exo", page_icon="🚀", initial_sidebar_state="collapsed")
 
 with st.sidebar:
     st.page_link('streamlit_app.py', label='Exoplanet Exploration', icon='🚀')
