@@ -50,20 +50,29 @@ def start_game():
     init_game()
 
 def check():
+    # Ensure the result spans the full page width
+    st.write("")  # Adds a little separation from the buttons
+    st.write("<div style='width: 100%; text-align: center;'>", unsafe_allow_html=True)
+
     if st.session_state.choice and st.session_state.habitable:
-        st.write("Correct! You chose right!")
+        st.write("<h2>Super job! You did it!</h2>", unsafe_allow_html=True)
         st.write(st.session_state.reason)
+
     elif st.session_state.choice and not st.session_state.habitable:
-        st.write("Oh No! You chose wrong!")
+        st.write("Great try! Unfortunately, it is not habitable.")
         st.write(st.session_state.reason)
         st.button("Next Planet", on_click=load_next_row)
-    elif not st.session_state.choice and st.session_state.habitable: 
-        st.write("Oh No! You chose wrong!")
+
+    elif not st.session_state.choice and st.session_state.habitable:
+        st.write("Good try! Interestingly, it is potentially habitable!")
         st.write(st.session_state.reason)
-    elif not st.session_state.choice and not st.session_state.habitable: 
-        st.write("Correct! You chose right!")
+
+    elif not st.session_state.choice and not st.session_state.habitable:
+        st.write("Awesome, you got it right!")
         st.write(st.session_state.reason)
         st.button("Next Planet", on_click=load_next_row)
+
+    st.write("</div>", unsafe_allow_html=True)
     
 
 st.title("Exoplanet Exploration")
@@ -80,15 +89,23 @@ else:
         st.write(f"{p}.")
     
     col1, col2 = st.columns(2)
+
+    # Initialize a flag to track button clicks
+    button_clicked = False
+    
     with col1:
         if st.button("Not Habitable"):
             st.session_state.choice = False
-            check()
+            button_clicked = True
 
     with col2:
         if st.button("Habitable"):
             st.session_state.choice = True
-            check()
+            button_clicked = True
+
+    # If a button was clicked, call `check()` outside the columns
+    if button_clicked:
+        check()
 
 st.markdown("""
             <style>
