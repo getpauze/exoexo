@@ -2,21 +2,23 @@ import streamlit as st
 import pandas as pd
 
 
-st.title("Exoplanet Exploration")
-st.write("Your planet has been invaded by aliens! You need to find the exoplanet where they came from.")
-
-col1, col2, col3 = st.columns(3)
-
 data = pd.read_csv('data.csv')
 
 # Initialize session state if not already done
 if 'index' not in st.session_state:
     st.session_state.index = 0
 
+if 'game' not in st.session_state:
+    st.session_state.game = False
+
+if 'choice' not in st.session_state:
+    st.session_state.choice = False
+
 # Load the first row of the dataset into session state
-if st.session_state.index == 0:
-    for col in data.columns:
-        st.session_state[col] = data.iloc[st.session_state.index][col]
+def init_game():
+    if st.session_state.index == 0:
+        for col in data.columns:
+            st.session_state[col] = data.iloc[st.session_state.index][col]
 
 # Function to load the next row into session state
 def load_next_row():
@@ -27,29 +29,58 @@ def load_next_row():
     for col in data.columns:
         st.session_state[col] = data.iloc[st.session_state.index][col]
     
+def start_game():
+    st.session_state.game = True
+    init_game()
 
-# Check if the button is clicked
-if st.button("Submit Answer"):
-    load_next_row()
+def check():
+    if st.session_state.choice and st.session_state.habitable:
+        st.write("Correct! You chose right!")
+        st.write(st.session_state.reason)
+    elif st.session_state.choice and not st.session_state.habitable:
+        st.write("Oh No! You chose wrong!")
+        st.write(st.session_state.reason)
+        st.button("Next Planet", on_click=load_next_row)
+    elif not st.session_state.choice and st.session_state.habitable: 
+        st.write("Oh No! You chose wrong!")
+        st.write(st.session_state.reason)
+    elif not st.session_state.choice and not st.session_state.habitable: 
+        st.write("Correct! You chose right!")
+        st.write(st.session_state.reason)
+        st.button("Next Planet", on_click=load_next_row)
+    
 
-# Display the current row data
-st.write("Current Exoplanet Data:")
+st.title("Exoplanet Exploration")
+if not st.session_state.game:
+    st.write("Zombies have taken over your planet! You need to find a new planet to live on. Explore the exoplanets below to find a new home.")
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.button("Blast off!", on_click=start_game)
+else:     
+        st.header(f"Planet: {st.session_state['id']}")
+        st.image(st.session_state.image)
+        
+        st.write(st.session_state["prompt"])
+    
+        col1, col2 = st.columns(2)
+    
+        with col1:
+            if st.button("Not Habitable"):
+                st.session_state.choice = False
+                check()
 
-for col in data.columns:
-    if col == 'image':
-        st.image(st.session_state[col])
-    else:        
-        st.write(f"{col}: {st.session_state[col]}")
+        with col2:
+            if st.button("Habitable"):
+                st.session_state.choice = True
+                check()
+
+st.markdown("""
+            <style>
+            img {
+            border: 2px solid #ffffff;
+            width: 100%;
+            }
+            </style>
+            """, unsafe_allow_html=True)
 
 
-with col2:
-    if st.button("Bleh"):
-        st.markdown(
-            """
-            <div style="display: flex; justify-content: center; align-items: center;">
-                <p>Button clicked!</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-        st.switch_page("pages/planet2.py")
