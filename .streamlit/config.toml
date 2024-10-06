@@ -7,3 +7,6 @@ font = "monospace"
 [server]
 runOnSave = true
 fileWatcherType = "poll"
+
+[client]
+showSidebarNavigation = false
