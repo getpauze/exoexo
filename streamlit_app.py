@@ -88,7 +88,7 @@ if not st.session_state.game:
     st.write("Zombies have taken over your planet! You need to find a new planet to live on. Explore the exoplanets below to find a new home.")
     col1, col2, col3 = st.columns(3)
     with col2:
-        st.button("Blast off!", on_click=start_game)
+        st.button("Blast off 🚀", on_click=start_game)
 else:     
     st.header(st.session_state['id'])
     st.image(st.session_state.image, use_column_width=True)
@@ -116,12 +116,18 @@ else:
         check()
 
 st.markdown("""
-            <style>
-            img {
-            border: 2px solid #ffffff;
-            width: 100%;
-            }
-            </style>
-            """, unsafe_allow_html=True)
+<style>
+img {
+    border: 2px solid #ffffff;
+    width: 100%;
+}
 
+button {
+    border: 2px solid #ffffff;
+}
 
+button:hover {
+    border: 4px solid #ffffff;
+}
+</style>
+""", unsafe_allow_html=True)
