@@ -75,8 +75,9 @@ if not st.session_state.game:
 else:     
     st.header(st.session_state['id'])
     st.image(st.session_state.image, use_column_width=True)
-    
-    st.write(st.session_state["prompt"])
+
+    for p in st.session_state["prompt"].split('.'):
+        st.write(f"{p}.")
     
     col1, col2 = st.columns(2)
     with col1:
