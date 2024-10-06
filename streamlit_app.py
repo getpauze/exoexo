@@ -55,8 +55,9 @@ def check():
     st.write("<div style='width: 100%; text-align: center;'>", unsafe_allow_html=True)
 
     if st.session_state.choice and st.session_state.habitable:
-        st.write("<h2>Super job! You did it!</h2>", unsafe_allow_html=True)
+        st.write("<h2>🚀 Super job! You did it! 🚀 </h2>", unsafe_allow_html=True)
         st.write(st.session_state.reason)
+        st.button("Restart ↻", on_click=load_next_row)
 
     elif st.session_state.choice and not st.session_state.habitable:
         st.write("Great try! Unfortunately, it is not habitable.")
@@ -99,7 +100,7 @@ else:
             button_clicked = True
 
     with col2:
-        if st.button("Habitable"):
+        if st.button("Potentially Habitable"):
             st.session_state.choice = True
             button_clicked = True
 
