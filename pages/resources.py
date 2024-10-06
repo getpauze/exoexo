@@ -1,5 +1,10 @@
 import streamlit as st
 
+with st.sidebar:
+    st.page_link('streamlit_app.py', label='Exoplanet Exploration', icon='🚀')
+    st.page_link('pages/home.py', label='Exoplanet Home', icon='🏠')
+    st.page_link('pages/resources.py', label='Exoplanet Resources', icon='📖')
+
 
 st.markdown("<h1 style='text-align: center;'>Resources</h1>", unsafe_allow_html=True)
 st.write("")
