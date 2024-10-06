@@ -1,5 +1,6 @@
 [theme]
 backgroundColor = "#000000"
+primaryColor = "blue"
 base="dark"
 font = "monospace"
 
