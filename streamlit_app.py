@@ -76,7 +76,7 @@ def check():
     st.write("</div>", unsafe_allow_html=True)
     
 
-st.title("Exoplanet Exploration")
+st.title("Exo-Exo")
 if not st.session_state.game:
     st.write("Zombies have taken over your planet! You need to find a new planet to live on. Explore the exoplanets below to find a new home.")
     col1, col2, col3 = st.columns(3)
