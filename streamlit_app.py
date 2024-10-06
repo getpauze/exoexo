@@ -62,12 +62,12 @@ def check():
     st.write("<div style='width: 100%; text-align: center;'>", unsafe_allow_html=True)
 
     if st.session_state.choice and st.session_state.habitable:
-        st.write("<h2>🚀 Super job! You did it! 🚀 </h2>", unsafe_allow_html=True)
+        st.write("<h2>A promising exoplanet! 🚀 </h2>", unsafe_allow_html=True)
         st.write(st.session_state.reason)
         st.button("Restart ↻", on_click=load_next_row)
 
     elif st.session_state.choice and not st.session_state.habitable:
-        st.write("Great try! Unfortunately, it is not habitable.")
+        st.write("Great effort! Unfortunately, it is not habitable.")
         st.write(st.session_state.reason)
         st.button("Next Planet", on_click=load_next_row)
 
@@ -93,7 +93,7 @@ else:
     st.header(st.session_state['id'])
     st.image(st.session_state.image, use_column_width=True)
 
-    for p in st.session_state["prompt"].split('.'):
+    for p in st.session_state["prompt"].split('. '):
         st.write(f"{p}.")
     
     col1, col2 = st.columns(2)
