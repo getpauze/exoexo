@@ -2,6 +2,22 @@ import streamlit as st
 import pandas as pd
 
 
+st.markdown("""
+<style>
+
+.stApp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stApp > .main > div {
+    width: 100%;
+}
+</style>
+""", unsafe_allow_html=True)
+
 data = pd.read_csv('data.csv')
 
 # Initialize session state if not already done
@@ -57,22 +73,21 @@ if not st.session_state.game:
     with col2:
         st.button("Blast off!", on_click=start_game)
 else:     
-        st.header(f"Planet: {st.session_state['id']}")
-        st.image(st.session_state.image)
-        
-        st.write(st.session_state["prompt"])
+    st.header(st.session_state['id'])
+    st.image(st.session_state.image, use_column_width=True)
     
-        col1, col2 = st.columns(2)
+    st.write(st.session_state["prompt"])
     
-        with col1:
-            if st.button("Not Habitable"):
-                st.session_state.choice = False
-                check()
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("Not Habitable"):
+            st.session_state.choice = False
+            check()
 
-        with col2:
-            if st.button("Habitable"):
-                st.session_state.choice = True
-                check()
+    with col2:
+        if st.button("Habitable"):
+            st.session_state.choice = True
+            check()
 
 st.markdown("""
             <style>
