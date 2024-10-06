@@ -57,8 +57,9 @@ if not st.session_state.game:
     with col2:
         st.button("Blast off!", on_click=start_game)
 else:     
-        st.write("Current Planet: ", st.session_state["id"])
+        st.header(f"Planet: {st.session_state['id']}")
         st.image(st.session_state.image)
+        
         st.write(st.session_state["prompt"])
     
         col1, col2 = st.columns(2)
@@ -72,4 +73,14 @@ else:
             if st.button("Habitable"):
                 st.session_state.choice = True
                 check()
+
+st.markdown("""
+            <style>
+            img {
+            border: 2px solid #ffffff;
+            width: 100%;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+
 
